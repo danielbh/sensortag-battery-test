@@ -1,23 +1,8 @@
+'use strict'
+
 /**
  * Created by danielhollcraft on 8/12/16.
- *
- * Interface for Texas Insrurments CC2650 bluetooth
- *
- * The CC2650 does not require a passkey so there is essentially
- * no difference between pairing and connecting.
- *
- * A Sensor Tag has the following states:
- *
- * 1) When the tag is turned on, it is Discoverable
- * 2) When it accepts our connection request it is Connected.
- * 3) If it loses the connection, or we tell it to disconnect,
- *    it returns to being discoverable.
- *
- * Initially, the users selects the sensors that should be connected.
- * At start up, these sensors are automatically connected.
- * If for some reason, one of these sensors becomes disconnected,
- * it is automatically reconnected.
- */
+ * */
 const sensorTag = require('sensortag')
 const async = require('async')
 
@@ -79,7 +64,7 @@ function read(sensor) {
           ],
           (error, results) => {
             if (error) {
-              log(error);
+              console.log(error);
             }
             callback();
           });
@@ -105,7 +90,7 @@ function read(sensor) {
           ],
           (error, results) => {
             if (error) {
-              log(error);
+              console.log(error);
             }
             callback();
           });
@@ -118,7 +103,7 @@ function read(sensor) {
     ],
     (error, results) => {
       if (error) {
-        log(error);
+        console.log(error);
       }
 
       console.log(JSON.stringify(sensorTagData));
