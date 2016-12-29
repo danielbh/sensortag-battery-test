@@ -24,8 +24,6 @@ function onDiscover(sensor) {
     } else {
       console.log('sensor ' + sensor.id + ' connected.')
 
-      configure
-
       setInterval(() => console.log(data), 10000)
     }
   });

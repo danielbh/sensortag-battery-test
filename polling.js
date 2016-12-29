@@ -6,7 +6,7 @@
 const sensorTag = require('sensortag')
 const async = require('async')
 
-start()
+start();
 
 function start() {
   sensorTag.discoverAll(onDiscover);
@@ -108,5 +108,4 @@ function read(sensor) {
 
       console.log(JSON.stringify(sensorTagData));
     });
-
 }
